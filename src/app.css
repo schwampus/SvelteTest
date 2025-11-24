@@ -1,0 +1,26 @@
+body {
+	font-family: "Stack Sans Headline", sans-serif;
+	margin: 0;
+	background: #0081a8;
+	color: #fdfcdc;
+	display: flex;
+	flex-direction: column;
+
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: 800;
+}
+
+
+
+
+/*
+colors:
+#EF2D56
+#363537
+#ED7D3A
+#fdfcdc
+#0081a7
+*/
