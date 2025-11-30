@@ -14,6 +14,9 @@
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
+		"@badeball/cypress-cucumber-preprocessor": "^23.2.1",
+		"@cypress/svelte": "^3.0.0",
+		"@cypress/vite-dev-server": "^7.0.1",
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.39.1",
 		"@sveltejs/adapter-auto": "^7.0.0",

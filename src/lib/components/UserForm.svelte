@@ -47,7 +47,7 @@
   <h2>Lets get to know each other!</h2>
   {#if formState.step >= questions.length}
     <h1>Thank You!</h1>
-    <button onclick={startOver}>Lets do it again!</button>
+    <button onclick={startOver} data-test-id="start-over-btn">Lets do it again!</button>
   {:else}
     <h1>Step: {formState.step + 1}</h1>
   {/if}
@@ -56,19 +56,17 @@
       {@render formStep(question)}
     {/if}
   {/each}
-  <!--  {#each questions as { id, question, type } (id)}
-    {@render formStep({ question, id, type })}
-  {/each} -->
+
   {#if formState.error !== ''}
-    <p class="error">{formState.error}</p>
+    <p class="error" data-test-id="error-msg">{formState.error}</p>
   {/if}
   {#snippet formStep({ question, id, type }: { type: string; id: string; question: string })}
     <article>
       <div>
         <label for={id}>{question}</label>
-        <input type={type} id={id} bind:value={formState.answers[id]} />
+        <input type={type} id={id} bind:value={formState.answers[id]} data-test-id={`input-${id}`} />
       </div>
-      <button onclick={() => nextStep(id)}>Next Question!</button>
+      <button onclick={() => nextStep(id)} data-test-id={`next-btn-${id}`}>Next Question!</button>
     </article>
   {/snippet}
 </main>

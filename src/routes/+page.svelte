@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Header from '$lib/components/Header.svelte';
-  import UserForm from '$lib/components/UserForm.svelte';
+  import Header from '../lib/components/Header.svelte';
+  import UserForm from '../lib/components/UserForm.svelte';
 
   let title: string = 'SVLTST';
   let name = $state('Jon');
@@ -12,7 +12,7 @@
 
   <div class="greetInput">
     <p>change name to greet on site load.</p>
-    <input type="text" bind:value={name} />
+    <input type="text" bind:value={name} data-test-id="greet-input" />
   </div>
 
   <UserForm></UserForm>
@@ -26,20 +26,21 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    padding: 40px;
-    gap: 20px;
+    padding: 10px;
+    gap: 10px;
   }
 
   h2 {
     font-weight: 700;
     margin-top: -22px;
-    margin-bottom: 40px;
   }
 
   .greetInput {
     display: flex;
-    max-width: 600px;
+    max-width: 500px;
+    width: 100%;
     justify-content: space-between;
-    gap: 40px;
+    align-items: center;
+    height: 40px;
   }
 </style>
